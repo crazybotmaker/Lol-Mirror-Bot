@@ -288,6 +288,11 @@ def racaty(url: str) -> str:
     dl_url = rsoup.find("a", {"id": "uniqueExpirylink"})["href"].replace(" ", "%20")
     return dl_url
 
+def gplinks(url: str) -> str:
+    url = "https://gplinks.co/4ZGqFhUB"
+    scraper = cloudscraper.create_scraper(allow_brotli=False)
+    res = scraper.get(url)
+
 def fichier(link: str) -> str:
     """ 1Fichier direct link generator
     Based on https://github.com/Maujar
