@@ -237,8 +237,16 @@ def is_url(url: str):
     url = findall(URL_REGEX, url)
     return bool(url)
 
+def is_gp_link(url: str):
+    url = re.findall(r'\bhttps?://.*gplinks\.co\S+', url)
+    return bool(url)
+
 def is_gdrive_link(url: str):
     return "drive.google.com" in url
+
+def is_gdtot_link(url: str):
+    url = re.match(r'https?://.*\.gdtot\.\S+', url)
+    return bool(url)
 
 def is_gdtot_link(url: str):
     url = match(r'https?://.*\.gdtot\.\S+', url)
